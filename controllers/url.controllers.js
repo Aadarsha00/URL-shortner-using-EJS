@@ -15,6 +15,7 @@ exports.handelGenerateNewShortURL = async (req, res) => {
       shortId: shortId,
       redirectURL: body.url,
       timestamp: [],
+      createdBy: req.user._id,
     });
     console.log("Short URL Created:", newUrl);
     return res.status(201).render("home", {
