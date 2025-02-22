@@ -17,9 +17,7 @@ exports.handelGenerateNewShortURL = async (req, res) => {
       timestamp: [],
     });
     console.log("Short URL Created:", newUrl);
-    return res.status(201).json({
-      success: true,
-      message: "Short URL created successfully",
+    return res.status(201).render("home", {
       id: shortId,
     });
   } catch (error) {
